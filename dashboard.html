@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Action Case Study - Master Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f7fafc; color: #2d3748; margin: 0; padding: 30px;
+        }
+        header { margin-bottom: 2.5rem; }
+        .back-link { font-size: 0.9rem; color: #7f8c8d; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }        
+	.container {
+  	    max-width: 1200px;
+  	    margin: 20px auto 0;
+	}
+        
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 30px; 
+            border-bottom: 2px solid #e2e8f0; 
+            padding-bottom: 20px; 
+        }
+        h1 { margin: 0; color: #1a202c; font-size: 1.85rem; }
+        .meta-tag { color: #718096; font-size: 0.9rem; margin-top: 5px; }
+
+        /* 🎛️ Toggle Control UI */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            background: #edf2f7;
+            padding: 4px;
+            border-radius: 8px;
+            gap: 4px;
+        }
+        .toggle-btn {
+            border: none;
+            background: transparent;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a5568;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .toggle-btn.active {
+            background: white;
+            color: #2b6cb0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* 🌍 Public Banner */
+        .community-panel { 
+            background: #f7fafc; 
+            border: 1px solid #e2e8f0; 
+            border-left: 5px solid #4a5568; 
+            padding: 20px; 
+            border-radius: 6px; 
+            margin-bottom: 35px; 
+        }
+
+        /* 🛡️ Private Admin Panel: Hidden by default */
+        .admin-panel { 
+            display: none; 
+            background: #ebf8ff; 
+            border: 1px solid #bee3f8; 
+            border-left: 5px solid #3182ce; 
+            padding: 20px; 
+            border-radius: 6px; 
+            margin-bottom: 35px; 
+        }
+
+        /* Reveal utility rule */
+        .show-admin .admin-panel {
+            display: block !important;
+        }
+        
+        .panel-title { font-weight: bold; text-transform: uppercase; font-size: 0.85rem; color: #2b6cb0; letter-spacing: 0.05em; margin-bottom: 15px; }
+        .stats-grid { display: table; width: 100%; table-layout: fixed; }
+        .stat-box { display: table-cell; text-align: center; border-right: 1px solid #e2e8f0; }
+        .stat-box:last-child { border-right: none; }
+        .stat-num { font-size: 1.75rem; font-weight: bold; color: #2b6cb0; }
+        .stat-label { font-size: 0.85rem; color: #4a5568; margin-top: 4px; }
+        
+        /* Grid Layout */
+        .main-layout { display: flex; gap: 20px; flex-wrap: wrap; }
+        .column { flex: 1; min-width: 300px; }
+        
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); padding: 25px; margin-bottom: 25px; border-top: 4px solid #cbd5e0; }
+        .library-card { border-top-color: #2b6cb0; }
+        .community-card { border-top-color: #319795; }
+        .evolution-card { border-top-color: #e53e3e; } 
+        .blueprint-card { border-top-color: #b7791f; }
+        .quote-card { border-top-color: #71b65a; } 
+        
+        .card-header { font-size: 1.15rem; font-weight: bold; color: #1a202c; margin-bottom: 5px; }
+        .card-sub { font-size: 0.85rem; color: #718096; margin-bottom: 15px; }
+        
+        .quote-block { background: #f8fafc; border-left: 3px solid #cbd5e0; padding: 12px; margin: 12px 0; font-size: 0.95rem; line-height: 1.4; color: #4a5568; }
+        .quote-label { font-size: 0.8rem; font-weight: bold; color: #718096; margin-top: 5px; text-transform: uppercase; }
+        
+        .utility-bar { margin-top: 30px; text-align: center; }
+        .download-btn { background: #2d3748; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.95rem; display: inline-block; }
+        .download-btn:hover { background: #1a202c; }
+    </style>
+</head>
+<body>
+<a href="index.html" class="back-link">← Back to Dossier</a>
+<div class="container">
+     <header>
+      
+        <div>
+            <h1>Bildung Community Matrix</h1>
+            <div class="meta-tag">Master: Cross-Community Project Idea Exchange</div>
+        </div>
+        <div class="toggle-container">
+            <button class="toggle-btn active" id="communityViewBtn" onclick="setView('community')">🌐 Community</button>
+            <button class="toggle-btn" id="adminViewBtn" onclick="setView('admin')">🛡️ Admin</button>
+        </div>
+    </header>
+
+    <div class="community-panel">
+        <div style="font-weight: 700; text-transform: uppercase; font-size: 0.8rem; color: #4a5568; letter-spacing: 0.05em; margin-bottom: 15px;">🌐 Cross-Regional Project Vitality & Engagement Health</div>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1; min-width: 150px; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: #2d3748;">4</div>
+                <div style="font-size: 0.8rem; color: #718096; font-weight: 600; text-transform: uppercase; margin-top: 4px;">Active Project Spaces</div>
+            </div>
+            <div style="flex: 1; min-width: 150px; text-align: center; border-left: 1px solid #e2e8f0;">
+                <div style="font-size: 2rem; font-weight: bold; color: #319795;">
+            <div style="font-size: 2rem; font-weight: bold; color: #319795;">94%</div>
+            
+            <div style="font-size: 0.8rem; color: #718096; font-weight: 600; text-transform: uppercase; margin-top: 4px; display: inline-flex; align-items: center; gap: 4px; position: relative;">
+            Community Trust Score
+            
+            <span class="info-tooltip" title="This Inclusion Blueprint Alignment measures how well a project actively removes barriers so that everyone can participate, not just a special few. See 'Friction & Adaptations' below to map the unmet portion remaining in 100% of this score." style="cursor: help; color: #a0aec0; font-size: 0.95rem; font-weight: normal; text-transform: none;">ⓘ</span>
+        </div>
+</div>
+            </div>
+            <div style="flex: 1; min-width: 150px; text-align: center; border-left: 1px solid #e2e8f0;">
+                <div style="font-size: 2rem; font-weight: bold; color: #b7791f;">120+ Hrs</div>
+                <div style="font-size: 0.8rem; color: #718096; font-weight: 600; text-transform: uppercase; margin-top: 4px;">Gatherings & Shared Learning</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+        <div class="panel-title">🛡️ Administrative Overview & System Metrics</div>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-num">1</div>
+                <div class="stat-label">Partner Libraries Registered</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">1</div>
+                <div class="stat-label">Community Patrons Ingested</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Data Security Integrity</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        
+        <div class="column">
+            <h2 style="color: #319795; font-size: 1.3rem; margin-top: 0;">1. The Spark (Community Hopes)</h2>
+            <div class="card community-card">
+                <div class="card-header">Group Feedback</div>
+                <div class="card-sub">Regional Interest</div>
+                <div class="quote-label">Expressed Need:</div>
+                <div class="quote-block" style="font-style: italic;">
+                    "We need multi-generational  spaces locally where we can trace regional lineages and learn how to preserve family bibles, documents, and land deeds."
+                </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <h2 style="color: #2b6cb0; font-size: 1.3rem; margin-top: 0;">2. The Plan (Beginning)</h2>
+            <div class="card library-card">
+                <div class="card-header">Spartanburg Community Hub</div>
+                <div class="card-sub">Spartanburg, SC | Active Status</div>
+                <div class="quote-label">Program Underway:</div>
+                <div class="quote-block" style="font-style: italic;">
+                    Launching a 10-week descriptive archiving group focused on scanning local records into standardized, privacy-respecting Markdown files.
+                </div>
+            </div>
+        </div>
+
+        <div class="column" style="min-width: 260px;">
+            <h2 style="color: #e53e3e; font-size: 1.3rem; margin-top: 0;">3. The Process (Growing Trust)</h2>
+            <div class="card evolution-card" style="background: #fff5f5;">
+                <div class="card-header" style="color: #9b2c2c;">⚙️ Live Assembly Notes</div>
+                <div class="card-sub">Friction & Adaptations
+                 <span class="info-tooltip" title="Currently this project's initial core friction points are progressing through active community adaptations." style="cursor: help; color: #a0aec0; font-size: 0.95rem; font-weight: normal; text-transform: none;">ⓘ</span>
+                </div>
+                <div class="quote-label";">Community Considerations:</div>
+                <div class="quote-block" style="background: #ffffff; font-style: italic;">
+                    Participants want to bridge the digital divide and overcome hurdles to access.<br><br>
+                    Discussed the importance of locally archived community records for full inclusion to information access. 
+                </div>
+                
+                <div class="quote-label";>Adjusting The Plan:</div>
+                <div class="quote-block" style="background: #ffffff; font-style: italic;">
+                    
+                    Discussed time-savings advantage between grantfunding and community fundraising, and considered the use of a hybrid approach to share costs. 
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2 style="color: #b7791f; font-size: 1.3rem; margin-top: 0;">4. The Blueprint (Reusable)</h2>
+           <div class="card blueprint-card" style="background: #fffaf0; border-left: 1px solid #feebc8; border-right: 1px solid #feebc8; border-bottom: 1px solid #feebc8;">
+                <div class="card-header" style="color: #744210;">📦 Genealogy Archiving Toolkit</div>
+                <div class="card-sub">Recipe Creator: Technical Archivist</div>
+                
+                <div class="quote-label">Community Creating Meaning :</div>
+                <div class="quote-block" style="background: #ffffff; font-style: italic;">
+                   Created a shared technical vocabulary; translated physical documents into local, digital archives for the community to make new connections.
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <a href="#" style="background: #b7791f; color: white; text-decoration: none; padding: 6px 12px; font-size: 0.85rem; font-weight: bold; border-radius: 4px; display: inline-block;">
+                        📥 Grab Blueprint (.md)
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <h2 style="color: #71b65a; font-size: 1.3rem; margin-top: 0;">Community Needs & Ideas</h2>
+            <div class="card quote-card" style="background: #f6fbf4; border-left: 1px solid #e2f0df; border-right: 1px solid #e2f0df; border-bottom: 1px solid #e2f0df;">
+                <div class="card-header">Anonymous Feedback</div>
+                <div class="card-sub">Age Bracket: 25-34 | Experience Rating: 5 / 5</div>
+                
+                <div class="quote-label">What patrons value about the space:</div>
+                <div class="quote-block">"It is one of the few true public spaces where information is shared without being followed or tracked for ads."</div>
+                
+                <div class="quote-label">Suggested Adaptations / Ideas to Borrow:</div>
+                <div class="quote-block">"More workshops focused on knowledge sharing in the community."</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="utility-bar admin-panel">
+        <a href="http://localhost:8080/download-report" class="download-btn">📥 Download Normalized Markdown Analysis Report</a>
+    </div>
+
+</div>
+
+<a href="#" 
+   onclick="toggleAdminClass(); return false;" 
+   style="position: fixed; bottom: 0; right: 0; width: 35px; height: 35px; background-color: transparent; display: block; z-index: 9999;" 
+   title="Toggle Secret Console"></a>
+
+<script>
+    // Primary function to handle visibility switches via UI buttons
+    function setView(viewType) {
+        const body = document.body;
+        const commBtn = document.getElementById('communityViewBtn');
+        const adminBtn = document.getElementById('adminViewBtn');
+
+        if (viewType === 'admin') {
+            body.classList.add('show-admin');
+            adminBtn.classList.add('active');
+            commBtn.classList.remove('active');
+        } else {
+            body.classList.remove('show-admin');
+            commBtn.classList.add('active');
+            adminBtn.classList.remove('active');
+        }
+    }
+
+    // Toggle alternative used by the invisible secret bottom-right touch block
+    function toggleAdminClass() {
+        const isAdminActive = document.body.classList.toggle('show-admin');
+        setView(isAdminActive ? 'admin' : 'community');
+    }
+
+    // Check query string configuration on initial page load (?view=admin)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('view') === 'admin') {
+        setView('admin');
+    }
+</script>
+
+</body>
+</html>

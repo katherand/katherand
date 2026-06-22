@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archival Systems & Metadata Dossier</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #fcfcfc;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 { font-size: 2rem; color: #1a252f; margin-bottom: 0.2rem; }
+        .subtitle { font-size: 1rem; color: #7f8c8d; font-family: monospace; margin-bottom: 2.5rem; }
+        
+        /* --- Flexbox Table Styling --- */
+        .flex-table {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        /* Table Header Layout */
+        .flex-thead {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .flex-th {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            text-align: left;
+        }
+
+        /* Table Body & Row Layout */
+        .flex-tbody {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-tr {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 1.2rem 0;
+        }
+
+        /* Column Width Allocations (Matching your original 15% / 55% / 30%) */
+        .col-id {
+            width: 15%;
+            padding-right: 1rem;
+        }
+
+        .col-scope {
+            width: 55%;
+            padding-right: 1.5rem;
+        }
+
+        .col-framework {
+            width: 30%;
+        }
+
+        /* Content Styling */
+        .project-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .project-title a {
+            color: #1a252f;
+            text-decoration: none;
+        }
+        .project-title a:hover {
+            text-decoration: underline;
+        }
+        .tech-tag {
+            font-family: monospace;
+            font-size: 0.85rem;
+            background-color: #f4f6f8;
+            color: #555;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+        .meta-id {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive Breakpoint for Mobile Screens */
+        @media (max-width: 650px) {
+            .flex-thead {
+                display: none; /* Hide headers on mobile */
+            }
+            .flex-tr {
+                flex-direction: column; /* Stack data columns vertically */
+                gap: 0.5rem;
+                padding: 1.5rem 0;
+            }
+            .col-id, .col-scope, .col-framework {
+                width: 100%; /* Take up full width */
+                padding-right: 0;
+            }
+            .meta-id {
+                font-size: 0.8rem;
+                background-color: #eef2f3;
+                padding: 0.1rem 0.4rem;
+                border-radius: 3px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <p><img src="Header.png" alt="New York Public Library, Public Domain image with website title 'Archival Systems and Data Management'" style="width: 100%; max-width: 894px; height: auto; filter: contrast(105%) brightness(95%); border-radius: 2px;"></p>
+    <header>
+        <div class="subtitle">System Directory // Master Dossier Record</div>
+    </header>
+
+    <main>
+        <p>A centralized inventory of metadata schemas, data pipelines, and curated information services demonstrating semantic structure and architectural integrity.</p>
+
+        <div class="flex-table">
+            
+            <div class="flex-thead">
+                <div class="flex-th col-id">Record ID</div>
+                <div class="flex-th col-scope">Collection / Project Title & Scope</div>
+                <div class="flex-th col-framework">Technical Framework</div>
+            </div>
+
+            <div class="flex-tbody">
+                
+                <div class="flex-tr">
+                    <div class="meta-id col-id">INF-SRV-01</div>
+                    <div class="col-scope">
+                        <div class="project-title"><a href="Prehistoric Pastimes in Language.html">Prehistoric Pastimes in Language</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">Rescued from proprietary library container formatting. A streamlined, single-page academic pathfinder modeling language origin theories, biological cognitive evolution, and early human symbolic behavior.</p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Information Architecture</span><br>
+                        <span class="tech-tag">Dublin Core Meta</span>
+                    </div>
+                </div>
+
+                <div class="flex-tr">
+                    <div class="meta-id col-id">DAT-PPL-02</div>
+                    <div class="col-scope">
+                        <div class="project-title"><a href="Museum Artwork Data Normalization Pipeline.html">Museum Artwork Data Normalization Pipeline</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">A production-grade Python utility that parses, normalizes, and structures over 160,000 raw museum records into clean, batch-generated Markdown catalogs.</p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Python (JSON)</span><br>
+                        <span class="tech-tag">Data Parsing</span>
+                    </div>
+                </div>
+
+                <div class="flex-tr">
+                    <div class="meta-id col-id">DAT-AUT-03</div>
+                    <div class="col-scope">
+                        <div class="project-title"><a href="Automated Transaction Ledger Engine.html">Automated Transaction Ledger Engine</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">Custom automation tool designed to isolate, deduplicate, and process raw bank transaction datasets, feeding updates to an optimized master budget framework with strict decimal precision.</p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Python (Pandas)</span><br>
+                        <span class="tech-tag">Data Deduplication</span>
+                    </div>
+                </div>
+
+                <div class="flex-tr">
+                    <div class="meta-id col-id">SYS-DES-04</div>
+                    <div class="col-scope">
+                        <div class="project-title">
+                            <a href="dashboard.html">Bildung: Community Matrix Dashboard</a> 
+                            <span style="font-family: monospace; font-size: 0.75rem; color: #d97706; background-color: #fef3c7; padding: 0.1rem 0.4rem; border-radius: 3px; margin-left: 0.5rem; font-weight: normal;"><br>In Progress</span>
+                        </div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                            An open-framework system mapping localized knowledge exchange and asset optimization. Grounded in the philosophy of community cultivation, the architecture relies on institutional alignment and library administrative custody to manage decentralized resource routing networks. This product began as a research proposal intended for an action case study. The example is a mock-up from a library of project ideas that communities may adopt.
+                        </p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Systems Design</span><br>
+                        <span class="tech-tag">Community Informatics</span><br>
+                        <span class="tech-tag">Python & SQLite</span>
+                    </div>
+                </div>
+
+                <div class="flex-tr">
+                    <div class="meta-id col-id">DAT-PPL-05</div>
+                    <div class="col-scope">
+                        <div class="project-title"><a href="ETL.html">Raw Metadata Ingestion & Automated Validation Engine</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                            A robust Python ETL utility designed to ingest raw, unverified CSV data streams. Programmatically isolates structural anomalies into an external error registry, handles hidden Byte Order Mark (BOM) encoding artifacts using specialized stream decoders, and executes a schema crosswalk to standardized, production-ready JSON.
+                        </p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Python (ETL)</span><br>
+                        <span class="tech-tag">Data Quality Assurance</span><br>
+                        <span class="tech-tag">Character Encoding</span>
+                    </div>
+                </div>
+
+                                <div class="flex-tr">
+                    <div class="meta-id col-id">DAT-PPL-06</div>
+                    <div class="col-scope">
+                        <div class="project-title"><a href="ArchiveDemo.html">Digital Archive Discovery Desk & Low-Latency Search Portal</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                            A zero-dependency, client-side front-end discovery portal optimized for long-term digital preservation and sustainability. Processes high-fidelity cultural heritage metadata arrays using a sovereign, serverless architecture. Implements an immediate multi-field string-matching lookup algorithm (onkeyup) to achieve real-time, low-latency filter results across thousands of normalized institutional records instantly.
+                        </p>
+                    </div>
+                    <div class="col-framework">
+                        <span class="tech-tag">Data Security & Integrity</span><br>
+                        <span class="tech-tag">Sovereign Tech Infrastructure</span><br>
+                        <span class="tech-tag">Long-Term Preservation</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="text-align: center; color: #95a5a6; font-size: 0.8rem; margin-top: 5rem; font-family: monospace;">
+            [Dossier End of File]
+        </p>
+    </footer>
+
+</body>
+</html>

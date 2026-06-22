@@ -1,0 +1,85 @@
+{
+  "matrix_metadata": {
+    "framework": "Bildung Community Matrix",
+    "version": "1.0.0",
+    "total_hubs": 3,
+    "total_participants": 9
+  },
+  "hubs": [
+    {
+      "hub_id": "LIB-001",
+      "name": "Central Branch Library",
+      "specialty": "Digital Infrastructure",
+      "participants": [
+        {
+          "id": "PART-101",
+          "skills": ["Technical Writing", "Database Basics"],
+          "alignment": "Civic Data Mapping Automation",
+          "status": "Onboarding"
+        },
+        {
+          "id": "PART-102",
+          "skills": ["Python", "API Integration"],
+          "alignment": "Open-Data Ingestion Pipeline",
+          "status": "Active Engagement"
+        },
+        {
+          "id": "PART-103",
+          "skills": ["UX/UI Design", "Accessibility"],
+          "alignment": "Public Dashboard Interface Kiosk",
+          "status": "Planning Phase"
+        }
+      ]
+    },
+    {
+      "hub_id": "LIB-002",
+      "name": "Westside Community Library",
+      "specialty": "Local History & Archiving",
+      "participants": [
+        {
+          "id": "PART-201",
+          "skills": ["Digital Archiving", "Metadata Entry"],
+          "alignment": "Historical Photo Digitization",
+          "status": "Active Engagement"
+        },
+        {
+          "id": "PART-202",
+          "skills": ["Oral History", "Audio Editing"],
+          "alignment": "Community Elder Voices Audio Archive",
+          "status": "Active Engagement"
+        },
+        {
+          "id": "PART-203",
+          "skills": ["Audio Ingestion", "Metadata Tagging"],
+          "alignment": "Living Jazz Greats Interview Compilation",
+          "status": "Onboarding"
+        }
+      ]
+    },
+    {
+      "hub_id": "LIB-003",
+      "name": "Mill District Reading Room",
+      "specialty": "Sustainability & Peer Sharing",
+      "participants": [
+        {
+          "id": "PART-301",
+          "skills": ["Urban Agriculture", "Seed Saving"],
+          "alignment": "Climate-Resilient Seed Vault Index",
+          "status": "Active Engagement"
+        },
+        {
+          "id": "PART-302",
+          "skills": ["Event Coordination", "Supply Chain"],
+          "alignment": "Tool Lending Library Inventory Logic",
+          "status": "Planning Phase"
+        },
+        {
+          "id": "PART-303",
+          "skills": ["Carpentry", "Solar Installs"],
+          "alignment": "Solar-Powered Community Charging Node",
+          "status": "Onboarding"
+        }
+      ]
+    }
+  ]
+}
