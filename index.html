@@ -77,6 +77,18 @@
         .project-title a:hover {
             text-decoration: underline;
         }
+        .project-title a::after {
+            content: " +";
+            font-weight: normal;
+            opacity: 0.6; /* Keeps it subtle so it looks professional */
+            transition: opacity 0.2s ease;
+            display: inline-block;
+            padding-left: 4px;
+        }
+        .project-title a:hover::after {
+            opacity: 1;
+            color: #0076ff; /* Gives a nice visual pop on hover */
+        }
         .tech-tag {
             font-family: monospace;
             font-size: 0.85rem;
