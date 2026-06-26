@@ -74,10 +74,18 @@
             margin-top: 0.3rem;
             padding-left: 0.5rem;
         }
-        /* This adds a space and a plus sign automatically after every link in your list */
-        .index-links a::after {
+        /* Target the links inside your actual resource list items instead! */
+        .resource-item a::after {
             content: " +";
             font-weight: normal;
             opacity: 0.6; /* Keeps it subtle so it doesn't distract from the title text */
             transition: opacity 0.2s ease;
+            display: inline-block;
+            padding-left: 4px;
+        }
+
+        /* Make the plus sign brighten up when they hover over the resource link */
+        .resource-item a:hover::after {
+            opacity: 1;
+            color: #0076ff; /* Or whatever your accent color is */
         }
