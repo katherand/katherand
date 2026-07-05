@@ -6,30 +6,36 @@
     <title>Project Showcase: Digital Archive Discovery Desk</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body> <header>
+<body> 
+    <header>
         <a href="index.html" class="back-link">← Back to Dossier</a>
-        <h1>Project Showcase: Digital Archive Discovery Desk</h1>
+        <h1>Project: ArchiveDesk Discovery</h1>
     </header>
-
     <main>
-       
         <section class="meta-context">
             <strong>Overview</strong>
             <p>
-            The Digital Archive Discovery Desk is a front-end portal designed to provide low-latency search and discovery capabilities across large-scale cultural heritage metadata indexes. This project demonstrates a complete lifecycle pipeline: transforming complex institutional data structures (130,000+ raw records) into a normalized collection, and serving it via an intuitive, client-side filtering system.</p>
+            The Digital Archive Discovery Desk is a front-end portal designed to provide low-latency search and discovery capabilities across large-scale cultural heritage metadata indexes. This project demonstrates a complete lifecycle pipeline: transforming complex institutional data structures (160,000+ raw records) into a normalized collection, and serving it via an intuitive, client-side filtering system.</p>
       
         </section> 
         <div class="narrow-container">
             <section id="abstract">
                 <h2>Technical Implementation & Archival Standards</h2>
-                <p>Data Processing Lifecycle: The underlying dataset represents high-fidelity institutional archive schemas. Raw source data was normalized using Python (Pandas) to clean, filter, and structure essential metadata properties (Unique Object ID, Creator, Date, Medium/Material, and Dimensions) before serialization.</p>
-                <p>Sovereign, Zero-Dependency Search Architecture: Built entirely using semantic HTML5, modern CSS Grid layouts, and Vanilla JavaScript. By avoiding heavy framework overhead, the discovery interface remains ultra-lightweight, highly secure, and optimized for long-term digital preservation and sustainability.</p>
-                <p>Client-Side Real-Time Query Filtering: Implements an immediate string-matching lookup algorithm (`onkeyup`) that searches across multiple metadata fields simultaneously, allowing users to instantly filter archives by creator or material types without secondary server latency.</p>
+                <p><h4>Data Processing Lifecycle:</h4>The underlying dataset represents high-fidelity institutional archive schemas. Raw source data was normalized using Python (Pandas) to clean, filter, and structure essential metadata properties (Unique Object ID, Creator, Date, Medium/Material, and Dimensions) before serialization.</p>
+                <p><h4>Sovereign, Zero-Dependency Search Architecture:</h4> Built entirely using semantic HTML5, modern CSS Grid layouts, and Vanilla JavaScript. By avoiding heavy framework overhead, the discovery interface remains ultra-lightweight, highly secure, and optimized for long-term digital preservation and sustainability.</p>
+                <p><h4>Client-Side Real-Time Query Filtering:</h4> Implements an immediate string-matching lookup algorithm (`onkeyup`) that searches across multiple metadata fields simultaneously, allowing users to instantly filter archives by creator or material types without secondary server latency.</p>
             </section>
-            
+            <section id="future">
+                <h2>Mapping Future Expansion for Search & Discovery</h2>
+                <p>While the current deployment provides a lightweight, client-side interface optimized for real-time text queries and sequential record browsing, the architecture is deliberately designed to scale. Data profiling of the 160,597-record corpus reveals clear structural footprints (such as 9,089 Plans and 4,277 Elevations) that provide a blueprint for advanced taxonomy mapping.</p>
+                <h4>Phase I | Controlled Vocabulary Ingestion:</h4> Automating a preprocessing Python pipeline using Pandas to extract messy raw description fields and map them into a standardized taxonomy (e.g., matching charcoal, graphite, and pencil to a unified Pencil / Graphite index column).
+                <h4>Phase II | Cross-Field Metadata Inferencing:</h4> Building text-parsing scripts to analyze title contexts, automatically capturing and categorizing omitted physical media types (such as identifying raw letterheads and correspondence records as Ink / Stationery).
+                <h4>Phase III | Indexed Relational Queries:</h4> Leveraging browser-based SQLite WebAssembly to index these new standardized columns, enabling deep, multi-tiered contextual filtering across thousands of historical records with sub-millisecond execution speeds.
+            </section>
+
             <section id="curated-resources">
                 <h2>Showcase Demo</h2>
-                <p>Demonstration Link: <a href="https://katherand.github.io/ArchiveDesk/" target="_blank" rel="noopener noreferrer">Launch Live ArchiveDesk Portal</a></p>
+                <p>Explore the Live Demo: <a href="https://katherand.github.io/ArchiveDesk/" target="_blank" rel="noopener noreferrer">ArchiveDesk Discovery</a></p>
             </section>
         </div>
     </main>
