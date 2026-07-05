@@ -1,4 +1,5 @@
-# Bildung Community Matrix: System Architecture & Data Schema
+# Bildung Community Matrix
+## System Architecture & Data Schema
 
 ## 📌 Executive Summary
 The **Bildung Community Matrix** is an open-framework system design engineered to map, organize, and optimize localized knowledge-exchange ecosystems. Developed as a conceptual model for community informatics action studies, the matrix establishes institutional alignment and library administrative custody to manage decentralized resource routing networks. 
