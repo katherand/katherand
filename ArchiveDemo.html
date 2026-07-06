@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Showcase: Digital Archive Discovery Desk</title>
     <link rel="stylesheet" href="style.css">
+        <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #fcfcfc;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header { margin-bottom: 2.5rem; }
+        .back-link { font-size: 0.9rem; color: #7f8c8d; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 1.8rem; color: #1a252f; margin-top: 0.5rem; }
+        h2 { font-size: 1.3rem; color: #2c3e50; margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; color: #34495e; margin-top: 1.5rem; }
+        
+        .meta-context {
+            background-color: #f4f6f8;
+            border-left: 3px solid #7f8c8d;
+            padding: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        .resource-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .resource-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .citation {
+            font-weight: bold;
+            color: #1a252f;
+        }
+        .annotation {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 0.3rem;
+            padding-left: 0.5rem;
+        }
+    </style>
 </head>
 <body> 
     <header>
@@ -14,20 +58,19 @@
     <main>
         <section class="meta-context">
             <strong>Overview</strong>
-            <p>
-            The Digital Archive Discovery Desk is a front-end portal designed to provide low-latency search and discovery capabilities across large-scale cultural heritage metadata indexes. This project demonstrates a complete lifecycle pipeline: transforming complex institutional data structures (160,000+ raw records) into a normalized collection, and serving it via an intuitive, client-side filtering system.</p>
+             The Digital Archive Discovery Desk is a front-end portal designed to provide low-latency search and discovery capabilities across large-scale cultural heritage metadata indexes. This project demonstrates a complete lifecycle pipeline: transforming complex institutional data structures (160,000+ raw records) into a normalized collection, and serving it via an intuitive, client-side filtering system.
       
         </section> 
         <div class="narrow-container">
             <section id="abstract">
                 <h2>Technical Implementation & Archival Standards</h2>
-                <p><h4>Data Processing Lifecycle:</h4>The underlying dataset represents high-fidelity institutional archive schemas. Raw source data was normalized using Python (Pandas) to clean, filter, and structure essential metadata properties (Unique Object ID, Creator, Date, Medium/Material, and Dimensions) before serialization.</p>
-                <p><h4>Sovereign, Zero-Dependency Search Architecture:</h4> Built entirely using semantic HTML5, modern CSS Grid layouts, and Vanilla JavaScript. By avoiding heavy framework overhead, the discovery interface remains ultra-lightweight, highly secure, and optimized for long-term digital preservation and sustainability.</p>
-                <p><h4>Client-Side Real-Time Query Filtering:</h4> Implements an immediate string-matching lookup algorithm (`onkeyup`) that searches across multiple metadata fields simultaneously, allowing users to instantly filter archives by creator or material types without secondary server latency.</p>
+                <p><h4>Data Processing Lifecycle:</h4>The underlying dataset represents high-fidelity institutional archive schemas. Raw source data was normalized using Python (Pandas) to clean, filter, and structure essential metadata properties (Unique Object ID, Creator, Date, Medium/Material, and Dimensions) before serialization.
+                <h4>Sovereign, Zero-Dependency Search Architecture:</h4> Built entirely using semantic HTML5, modern CSS Grid layouts, and Vanilla JavaScript. By avoiding heavy framework overhead, the discovery interface remains ultra-lightweight, highly secure, and optimized for long-term digital preservation and sustainability.
+                <h4>Client-Side Real-Time Query Filtering:</h4> Implements an immediate string-matching lookup algorithm (`onkeyup`) that searches across multiple metadata fields simultaneously, allowing users to instantly filter archives by creator or material types without secondary server latency.
             </section>
             <section id="future">
                 <h2>Mapping Future Expansion for Search & Discovery</h2>
-                <p>While the current deployment provides a lightweight, client-side interface optimized for real-time text queries and sequential record browsing, the architecture is deliberately designed to scale. Data profiling of the 160,597-record corpus reveals clear structural footprints (such as 9,089 Plans and 4,277 Elevations) that provide a blueprint for advanced taxonomy mapping.</p>
+                While the current deployment provides a lightweight, client-side interface optimized for real-time text queries and sequential record browsing, the architecture is deliberately designed to scale. Data profiling of the 160,597-record corpus reveals clear structural footprints (such as 9,089 Plans and 4,277 Elevations) that provide a blueprint for advanced taxonomy mapping.
                 <h4>Phase I | Controlled Vocabulary Ingestion:</h4> Automating a preprocessing Python pipeline using Pandas to extract messy raw description fields and map them into a standardized taxonomy (e.g., matching charcoal, graphite, and pencil to a unified Pencil / Graphite index column).
                 <h4>Phase II | Cross-Field Metadata Inferencing:</h4> Building text-parsing scripts to analyze title contexts, automatically capturing and categorizing omitted physical media types (such as identifying raw letterheads and correspondence records as Ink / Stationery).
                 <h4>Phase III | Indexed Relational Queries:</h4> Leveraging browser-based SQLite WebAssembly to index these new standardized columns, enabling deep, multi-tiered contextual filtering across thousands of historical records with sub-millisecond execution speeds.
@@ -35,7 +78,7 @@
 
             <section id="curated-resources">
                 <h2>Showcase Demo</h2>
-                <p>Explore the Live Demo: <a href="https://katherand.github.io/ArchiveDesk/" target="_blank" rel="noopener noreferrer">ArchiveDesk Discovery</a></p>
+               Explore the Live Demo: <a href="https://katherand.github.io/ArchiveDesk/" target="_blank" rel="noopener noreferrer">ArchiveDesk Discovery</a>
             </section>
         </div>
     </main>
