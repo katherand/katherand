@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase: Automated Digital Preservation Ingest Pipeline</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #fcfcfc;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header { margin-bottom: 2.5rem; }
+        .back-link { font-size: 0.9rem; color: #7f8c8d; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 1.8rem; color: #1a252f; margin-top: 0.5rem; }
+        h2 { font-size: 1.3rem; color: #2c3e50; margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; color: #34495e; margin-top: 1.5rem; }
+        h4 { font-size: 1rem; color: #1a252f; margin-bottom: 0.2rem; margin-top: 1.2rem; }
+        
+        .meta-context {
+            background-color: #f4f6f8;
+            border-left: 3px solid #7f8c8d;
+            padding: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        .resource-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .resource-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .citation {
+            font-weight: bold;
+            color: #1a252f;
+        }
+        .annotation {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 0.3rem;
+            padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        <a href="index.html" class="back-link">← Back to Dossier</a>
+        <h1>Project: Automated Digital Preservation Ingest Pipeline</h1>
+    </header>
+    <main>
+        <section class="meta-context">
+            <strong>Overview</strong>
+            The Automated Digital Preservation Ingest Pipeline is a secure, Python-based workstation staging framework designed for digital curation and archival preservation workflows. It provides an automated baseline for securely isolating incoming donor media, executing bit-stream preservation captures, and orchestrating downstream forensic format analysis and privacy auditing.
+        </section> 
+        
+        <div class="narrow-container">
+            <section id="abstract">
+                <h2>Technical Implementation & Archival Standards</h2>
+                
+                <h4>Controlled Environment & Staging Safeguards:</h4>
+                <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                    To protect institutional environments from unvetted donor media, the workstation pipeline initializes a local staging workspace and triggers an intentional, automated execution pause. This design requirement safely halts forensic utility progression until the archivist manually verifies and transfers incoming data structures into the isolated <code>incomingInbound/</code> buffer.
+                </p>
+                
+                <h4>Bit-Stream Preservation & Cryptographic Capture:</h4>
+                <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                    Leverages sub-process automation routines via <code>rsync</code> to execute bit-stream duplication of the raw assets directly into dedicated, secure <code>archivalStorage/</code> directories. This maintains original file metadata structures and ensures identical cryptographic replica tracking for chain-of-custody compliance.
+                </p>
+                
+                <h4>Deep Byte-Signature Format Characterization:</h4>
+                <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                    Integrates <code>Brunnhilde</code> and the <code>Siegfried</code> PRONOM registry file identifier to bypass unstable extension-based identification. The script automatically executes deep binary byte-signature analysis to safely inventory file profiles, formats, and structural variations across unknown incoming data transfers.
+                </p>
+
+                <h4>Multi-Threaded Vulnerability & Privacy Auditing:</h4>
+                <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">
+                    Orchestrates high-throughput, recursive text and binary parsing via multi-threaded <code>BulkExtractor</code> modules. By actively scanning raw streams for cryptographic patterns, the framework maps out potential security footprints and flags sensitive personally identifiable information (PII) before any assets enter final accessioning or catalog deployment.
+                </p>
+            </section>
+
+            <section id="curated-resources">
+                <h2>Showcase Resources</h2>
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <span class="citation">Source Code Repository:</span>
+                        <div class="annotation">
+                            Review the Python implementation, environment blueprints, and full documentation directly on GitHub: 
+                            <a href="https://github.com/katherand/digitalArchivesLab" target="_blank" rel="noopener noreferrer">View Core Ingest Repository</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p style="text-align: center; color: #7f8c8d; font-size: 0.8rem; margin-top: 4rem;">
+            Controlled Archival Dossier — Private Server Environment
+        </p>
+    </footer>
+</body>
+</html>
